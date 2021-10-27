@@ -18,17 +18,19 @@ class Size(NamedTuple):
 
 class Resolution:
     # 4:3 resolutions
-    QVGA =      Size(320, 240)
-    VGA =       Size(640, 480)
-    NTSC =      Size(720, 480)
-    SVGA =      Size()
-    PAL =       Size()
-    XGA =       Size()
-    SXGA =      Size()
-    SXGA_plus = Size()
-    UXGA =      Size()
-    QXGA =      Size()
-    QSXGA =     Size()
+    QVGA =      Size(320,  240,  _4_3)
+    VGA =       Size(640,  480,  _4_3)
+    NTSC_4_3 =  Size(720,  480,  _4_3)
+    PAL =       Size(768,  576,  _4_3)
+    SVGA =      Size(800,  600,  _4_3)
+    XGA =       Size(1024, 768,  _4_3)
+    SXGA_plus = Size(1400, 1050, _4_3)
+    UXGA =      Size(1600, 1200, _4_3)
+    QXGA =      Size(2048, 1536, _4_3)
+
+    # 5:4 resolutions
+    SXGA =  Size(1280, 1024, _5_4)
+    QSXGA = Size(2560, 2048, _5_4)
 
     # 16:9 resolutions
     WVGA_16_9 = Size(854,  480,  _16_9)
@@ -39,7 +41,7 @@ class Resolution:
 
     # 16:10 resolutions
     CGA =        Size(320,  200,  _16_10)
-    WXGA_8_5 =   Size(1280, 800,  _16_10)
+    WXGA_16_10 = Size(1280, 800,  _16_10)
     WSXGA_plus = Size(1680, 1050, _16_10)
     WUXGA =      Size(1920, 1200, _16_10)
     WQXGA =      Size(2560, 1600, _16_10)
@@ -57,4 +59,5 @@ class Resolution:
         # Seriously, why does this exist?
         # I spent an entire 15 seconds on a calculator to find the aspect ratio of this
         # I know why it exists, I just don't want it to
+        # But it will never be as awful as 1366 x 786 *insert violent shuddering*
     WSVGA = Size(1024, 600, _100_171)
